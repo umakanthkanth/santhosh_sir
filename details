@@ -80,5 +80,6 @@ Successfully created a normalized PostgreSQL database on Neon, linked to Google 
 visualized access data with clean, scalable structure.
  Dashboard: https://lookerstudio.google.com/reporting/61dfa0b7-c376-4a9b-bd43-33f1e90d1ccb
  Neon Database: https://console.neon.tech/app/projects/spring-truth-64178874/auth
-TABLE "git_access" CONSTRAINT "git_access_user_id_fkey" FOREIGN KEY (user_id) REFERENCES employee_details(user_id) ON DELETE CASCADE
-TABLE "sop_status" CONSTRAINT "sop_status_user_id_fkey" FOREIGN KEY (user_id) REFERENCES employee_details(user_id) ON DELETE CASCADE
+
+
+
