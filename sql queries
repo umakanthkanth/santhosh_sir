@@ -35,3 +35,38 @@ CREATE TABLE public.git_access (
     access_type VARCHAR(50),            -- e.g. 'Domains', 'Domains Shared', 'Data Instance', 'Hub Admin Shared', 'Packages'
     access_status VARCHAR(80)           -- e.g. 'SCITASK2041451', 'Insufficient Privilege'
 );
+
+
+INSERT INTO employee_details (user_id, resource_name, manager_name, onboarding_status, product_team, role, email_id, query_input, sop_status)
+VALUES
+('nbabu002', 'abhishek baid', 'santhosh kumar kanduri', 'active', 'EDF Hub', 'SDE Hub lead', 'abhishek@company.com', 'abid01', 'yes'),
+('skand004', 'Sanjay Kandasamy', 'Ravi Teja', 'offer extended', 'EDF Operations', 'ADE', 'sanjay.k@company.com', 'skand004', 'no'),
+('apate007', 'Asha Patel', 'Anand Kumar', 'active', 'EDF Hub', 'DE', 'asha.p@company.com', 'apate007', 'yes');
+
+INSERT INTO sop_status (user_id, sop_name, sop_completion_status)
+VALUES
+('nbabu002', 'SOP-428306', 'Completed'),
+('nbabu002', 'SOP-428307', 'Completed'),
+('skand004', 'SOP-428306', 'Pending'),
+('apate007', 'SOP-428310', 'Completed');
+
+INSERT INTO ad_group_access (user_id, ad_group_type, ad_group_name, access_status)
+VALUES
+('nbabu002', 'Normal Admin', 'edf-sem-ent-bus-de', 'SCITASK2041451'),
+('nbabu002', 'Business', 'edf-sem-bus-com-de', 'Completed'),
+('nbabu002', 'C360', 'c360-admin-de', 'Insufficient Privilege'),
+('skand004', 'PUBD', 'pubd-sem-bus-de', 'SCITASK2041522'),
+('apate007', 'Commercialization', 'comm-sem-bus-de', 'Completed');
+
+
+INSERT INTO git_access (user_id, access_type, access_status)
+VALUES
+('nbabu002', 'Domains', 'SCITASK2041451'),
+('nbabu002', 'Domains Shared', 'SCITASK2041452'),
+('nbabu002', 'Data Instance', 'Insufficient Privilege'),
+('nbabu002', 'Hub Admin Shared', 'SCITASK2041453'),
+('nbabu002', 'Packages', 'Completed'),
+('skand004', 'Domains', 'Pending'),
+('skand004', 'Domains Shared', 'Insufficient Privilege'),
+('apate007', 'Domains', 'Completed'),
+('apate007', 'Packages', 'Completed');
