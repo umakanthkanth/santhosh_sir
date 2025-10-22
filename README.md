@@ -1,4 +1,3 @@
-<img width="733" height="1204" alt="image" src="https://github.com/user-attachments/assets/50e86e0b-f4ed-429b-9b7a-233958e1b03d" /># Objective
 To design a normalized relational data model that captures employee details
 
 The database is hosted on Neon (PostgreSQL) and connected to Google Looker Studio for building interactive dashboards and data visualizations
