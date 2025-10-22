@@ -1,35 +1,37 @@
 
 CREATE TABLE public.employee_details (
-    employee_id SERIAL PRIMARY KEY,
+    user_id VARCHAR(50) PRIMARY KEY,    -- Unique user identifier (e.g. nbabu002)
     resource_name VARCHAR(100),
     manager_name VARCHAR(100),
     onboarding_status VARCHAR(30),
     product_team VARCHAR(100),
     role VARCHAR(100),
     email_id VARCHAR(150),
-    user_id VARCHAR(50),
     query_input VARCHAR(20),
     sop_status VARCHAR(20)
 );
 
+
 CREATE TABLE public.sop_status (
     sop_id SERIAL PRIMARY KEY,
-    employee_id INT REFERENCES public.employee_details(employee_id) ON DELETE CASCADE,
-    sop_name VARCHAR(100),          -- e.g. 'SOP-432048'
-    sop_completion_status VARCHAR(50)  -- e.g. 'Completed', 'Pending'
+    user_id VARCHAR(50) REFERENCES public.employee_details(user_id) ON DELETE CASCADE,
+    sop_name VARCHAR(100),              -- e.g. 'SOP-432048'
+    sop_completion_status VARCHAR(50)   -- e.g. 'Completed', 'Pending'
 );
+
 
 CREATE TABLE public.ad_group_access (
     ad_access_id SERIAL PRIMARY KEY,
-    employee_id INT REFERENCES public.employee_details(employee_id) ON DELETE CASCADE,
-    ad_group_type VARCHAR(50),     -- e.g. 'Normal Admin', 'Business', 'PUBD', 'C360', 'Commercialization'
-    ad_group_name VARCHAR(100),    -- e.g. 'edf-sem-ent-bus-de'
-    access_status VARCHAR(80)      -- e.g. 'SCITASK2041451', 'Insufficient Privilege'
+    user_id VARCHAR(50) REFERENCES public.employee_details(user_id) ON DELETE CASCADE,
+    ad_group_type VARCHAR(50),          -- e.g. 'Normal Admin', 'Business', 'PUBD', 'C360', 'Commercialization'
+    ad_group_name VARCHAR(100),         -- e.g. 'edf-sem-ent-bus-de'
+    access_status VARCHAR(80)           -- e.g. 'SCITASK2041451', 'Insufficient Privilege'
 );
+
 
 CREATE TABLE public.git_access (
     git_access_id SERIAL PRIMARY KEY,
-    employee_id INT REFERENCES public.employee_details(employee_id) ON DELETE CASCADE,
-    access_type VARCHAR(50),       -- e.g. 'Domains', 'Domains Shared', 'Data Instance', 'Hub Admin Shared', 'Packages'
-    access_status VARCHAR(80)      -- e.g. 'SCITASK2041451', 'Insufficient Privilege'
+    user_id VARCHAR(50) REFERENCES public.employee_details(user_id) ON DELETE CASCADE,
+    access_type VARCHAR(50),            -- e.g. 'Domains', 'Domains Shared', 'Data Instance', 'Hub Admin Shared', 'Packages'
+    access_status VARCHAR(80)           -- e.g. 'SCITASK2041451', 'Insufficient Privilege'
 );
